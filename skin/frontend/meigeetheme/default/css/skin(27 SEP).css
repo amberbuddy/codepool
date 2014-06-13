@@ -1,0 +1,83 @@
+/**
+* These styles is generated automaticaly. Please Do no edit it directly all changes will be lost.
+* Skin
+*//*======Site Bg=======*/
+.content-wrapper{background-color:#FFFFFF;}
+
+
+
+/*======Skin Color #1=======*/ /* Red */
+.catalog-product-view .box-reviews .form-add h3 span,
+.products-grid  button span span,
+.block-poll .block-subtitle,
+.block-list li.item .product-name a:before,
+#categories-accordion li.level-top.opened a.level-top,
+#footer .footer-block a.more,
+#footer .footer-block ul.tweets li a,
+.product-name a:hover,
+#footer .footer-block h4,
+.price{color:#26FF3C;}
+
+
+.catalog-product-view .box-reviews .data-table thead,
+.meigee-tabs li.active a,
+.meigee-tabs li.active a:hover,
+.product-view .product-shop .product-type-block .email-friend > span,
+.product-view .product-options-bottom .email-friend > span,
+.toolbar-bottom .pager .pages ol li.current span,
+.link-compare > span,
+.link-wishlist > span,
+.pager .pages li a.i-previous,
+.pager .pages li a.i-next,
+.sorter .sort-by a,
+.block-wishlist .prev:hover,
+.block-wishlist .next:hover,
+aside.sidebar .actions a,
+.btn-remove:hover,
+.block-layered-nav dl#layered_navigation_accordion dt.closed .btn-nav,
+#categories-accordion li.level-top.parent.closed .btn-cat,
+#categories-accordion li.level-top.parent .btn-cat.closed,
+#footer .block-subscribe .input-box button:hover > span,
+#nav > li.active,
+#nav > li.over,
+header#header .top-cart .product-box .price-qty,
+button.button > span,
+header#header .dropdown-links ul,
+header#header .dropdown-links .dropdown-links-title,
+header#header .links li a.top-link-login,
+ul.social-links li a:hover{background-color:#26FF3C;}
+
+
+
+/*======Skin Color #2=======*/ /* Green */
+.temp-class-1{color:#FFA500;}
+
+
+.block-related .prev,
+.block-related .next,
+.meigee-tabs a:hover,
+.product-view .product-shop .product-type-block .email-friend:hover > span,
+.product-view .product-options-bottom .email-friend:hover > span,
+.my-wishlist input.quantity-decrease,
+.my-wishlist input.quantity-increase,
+.add-to-cart input.quantity-decrease,
+.add-to-cart input.quantity-increase,
+.cart-table input.quantity-decrease,
+.cart-table input.quantity-increase,
+.more-views .prev, 
+.more-views .next,
+header#header .top-cart .block-title .cart-icon,
+.link-compare:hover > span,
+.link-wishlist:hover > span,
+.pager .pages li a.i-previous:hover,
+.pager .pages li a.i-next:hover,
+.sorter .sort-by a:hover,
+.block-wishlist .prev,
+.block-wishlist .next,
+.btn-remove,
+.block-layered-nav dl#layered_navigation_accordion dt .btn-nav,
+#categories-accordion li.level-top.parent .btn-cat,
+#footer .footer-main-block .site-container,
+header#header .top-cart .block-content button.button:hover > span,
+header#header .links li a.top-link-login:hover,
+ul.social-links li a{background-color:#FFA500;}header slider{background-color:ffffff;}

@@ -1,0 +1,11 @@
+<?php // Social Links
+$html = $this->getSocialLinks();
+echo '<ul class="social-links">';
+        if (!empty($html['twitter'])) echo '<li><a target="_blank" class="twitter" href="'.$html['twitter'].'"></a></li>';
+        if (!empty($html['instagram'])) echo '<li><a target="_blank" class="instagram" href="'.$html['instagram'].'"></a></li>';        
+        if (!empty($html['facebook'])) echo '<li><a target="_blank" class="facebook" href="'.$html['facebook'].'"></a></li>';
+        if (!empty($html['googleplus'])) echo '<li><a target="_blank" class="googleplus" href="'.$html['googleplus'].'"></a></li>';
+    if (!empty($html['pinterest'])) echo '<li><a target="_blank" class="pinterest" href="http://www.pinterest.com/AmberBuddyAU"></a></li>';        
+        
+echo '</ul>';
+?>

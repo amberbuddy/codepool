@@ -1,0 +1,2 @@
+[10-Jan-2014 02:46:54 UTC] PHP Warning:  array_rand(): Second argument has to be between 1 and the number of elements in the array in /home/amberbud/public_html/wp/wp-content/plugins/secure-xml-rpc-sqn/secure_xml_rpc.php on line 71
+[10-Jan-2014 02:46:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/amberbud/public_html/wp/wp-content/plugins/secure-xml-rpc-sqn/secure_xml_rpc.php on line 71

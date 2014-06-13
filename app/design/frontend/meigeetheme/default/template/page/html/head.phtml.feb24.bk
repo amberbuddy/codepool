@@ -1,0 +1,215 @@
+<?php
+/**
+ * Magento
+ *
+ * @category    design
+ * @package     meigeetheme_default
+ * @copyright   Copyright (c) 2012 MeigeeTeam. (http://www.meigeeteam.com)
+ */
+?>
+<?php 
+/*****/
+$appearance = MAGE::helper('ThemeOptions')->getThemeOptions('appearance');
+/*****/
+?>
+<?php echo MAGE::helper('ThemeOptions')->getThemeOptions('user-scalable'); ?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+
+<!-- Font Replacement -->
+<?php if ($appearance['font'] == 2): ?>
+<link href='//fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', $appearance['gfont']); ?>:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+<?php endif; ?>
+<!-- End Font Replacement -->
+
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+
+<!-- Font Replacement -->
+<?php if ($appearance['font'] == 2): ?>
+<?php if ($appearance['default_sizes'] == 0): ?>
+<style>
+.product-view .product-options-bottom .price-box .price-as-configured .full-product-price .price,
+.tier-prices .price,
+.products-grid .price-box .old-price .price,
+.products-grid .price-box .special-price .price,
+.products-list button.btn-quick-view span span,
+.products-grid button.btn-quick-view span span,
+.product-view .product-prev,
+.product-view .product-next,
+header#header .nav-container > ul li li a span,
+#toTop,
+.header-slider-container .iosSlider .prev,
+.header-slider-container .iosSlider .next,
+.header-slider-container .iosSlider .slider .item div.slider-product-label,
+.header-slider-container .iosSlider .slider .item h2,
+.header-slider-container .iosSlider .slider .item h3 a,
+.home-banner-block h2,
+.home-banner-block a,
+.slider-container .prev,
+.slider-container .next,
+.slider-container .slider-text-box a,
+.slider-container .slider-text-box h2,
+.dashboard .box-info .box .box-title h3,
+.dashboard .box-title h2,
+.dashboard .box-head h2,
+.dashboard .welcome-msg p.hello,
+#checkout-step-login h3,
+.opc .step-title .number,
+.opc .step-title h2,
+.account-login .new-users h2,
+.account-login .registered-users h2,
+#cart-accordion h3.accordion-title,
+.cart .crosssell li.item .price-box .price,
+.cart .crosssell h2,
+.cart .totals .totals-title,
+.cart .discount h2,
+.cart .shipping h2,
+.cart-table .cart-price .price,
+.product-collateral h2,
+.catalog-product-view .box-reviews h2,
+.review-title h2,
+.block-related .product .product-details .price-box .price,
+.block-related .product-name a,
+.block-related header h2,
+.meigee-tabs a,
+.product-view .product-shop .price-box .price,
+.product-view .product-shop .product-name h2,
+.toolbar-bottom .pager .pages ol li a,
+.toolbar-bottom .pager .pages ol li.current span,
+.products-grid .price-box .price,
+.products-list .price-box .price,
+.toolbar .sorter .limiter label,
+.sorter .sort-by label,
+.sorter .view-mode .grid,
+.sorter .view-mode .list,
+.page-title h1,
+.page-title h2,
+aside.sidebar .actions a,
+aside.sidebar section header h2,
+#footer .block-subscribe h3,
+#footer .footer-main-block .footer-columns-block h3,
+#footer .footer-block .custom-footer-blocks h3,
+#footer .footer-block a.more,
+#nav > li > a,
+#nav ul li a,
+.product-name a,
+button.button span span,
+header#header .top-cart .block-title .title-cart,
+header#header .header-text-box,
+header#header .dropdown-links .dropdown-links-title,
+header#header .links li a.top-link-login{font-family: '<?php echo $appearance['gfont']; ?>', sans-serif; font-size:<?php echo $appearance['fontsize']; ?>px !important; line-height: <?php echo $appearance['fontsize']; ?>px !important; font-weight: <?php echo $appearance['fontweight']; ?> !important;}
+</style>
+<?php else: ?>
+<style>
+.product-view .product-options-bottom .price-box .price-as-configured .full-product-price .price,
+.tier-prices .price,
+.products-grid .price-box .old-price .price,
+.products-grid .price-box .special-price .price,
+.product-view .product-prev,
+.product-view .product-next,
+header#header .nav-container > ul li li a span,
+#toTop,
+.header-slider-container .iosSlider .prev,
+.header-slider-container .iosSlider .next,
+.header-slider-container .iosSlider .slider .item div.slider-product-label,
+.header-slider-container .iosSlider .slider .item h2,
+.header-slider-container .iosSlider .slider .item h3 a,
+.home-banner-block h2,
+.home-banner-block a,
+.slider-container .prev,
+.slider-container .next,
+.slider-container .slider-text-box a,
+.slider-container .slider-text-box h2,
+.dashboard .box-info .box .box-title h3,
+.dashboard .box-title h2,
+.dashboard .box-head h2,
+.dashboard .welcome-msg p.hello,
+#checkout-step-login h3,
+.opc .step-title .number,
+.opc .step-title h2,
+.account-login .new-users h2,
+.account-login .registered-users h2,
+#cart-accordion h3.accordion-title,
+.cart .crosssell li.item .price-box .price,
+.cart .crosssell h2,
+.cart .totals .totals-title,
+.cart .discount h2,
+.cart .shipping h2,
+.cart-table .cart-price .price,
+.product-collateral h2,
+.catalog-product-view .box-reviews h2,
+.review-title h2,
+.block-related .product .product-details .price-box .price,
+.block-related .product-name a,
+.block-related header h2,
+.meigee-tabs a,
+.product-view .product-shop .price-box .price,
+.product-view .product-shop .product-name h2,
+.toolbar-bottom .pager .pages ol li a,
+.toolbar-bottom .pager .pages ol li.current span,
+.products-grid .price-box .price,
+.products-list .price-box .price,
+.price-notice .price,
+.toolbar .sorter .limiter label,
+.sorter .sort-by label,
+.sorter .view-mode .grid,
+.sorter .view-mode .list,
+.page-title h1,
+.page-title h2,
+aside.sidebar .actions a,
+aside.sidebar section header h2,
+#footer .block-subscribe h3,
+#footer .footer-main-block .footer-columns-block h3,
+#footer .footer-block .custom-footer-blocks h3,
+#footer .footer-block a.more,
+#nav > li > a,
+#nav ul li a,
+.product-name a,
+button.button span span,
+header#header .top-cart .block-title .title-cart,
+header#header .header-text-box,
+header#header .dropdown-links .dropdown-links-title,
+header#header .links li a.top-link-login{font-family: '<?php echo $appearance['gfont']; ?>', sans-serif;}
+</style>
+<?php endif; ?>
+<?php endif; ?>
+<!-- End Font Replacement -->
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//v2.zopim.com/?1ePXcddmBm8MDagPWxakpUmrTWjzzc0E';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zopim Live Chat Script-->
+<!--Start of Google analytics-->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45415743-1', 'amberbuddy.com.au');
+  ga('send', 'pageview');
+
+</script>
+
+<!--End of Google analytics-->

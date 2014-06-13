@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Home Page</title>
+                <identifier>home</identifier>
+                <content><![CDATA[<div class="divider">&nbsp;</div>
+					<div class="home-banner-block">
+					<div class="grid_7 alpha"><img src="{{media url="wysiwyg/home_banner.png"}}" alt="" data-srcx2="{{media url="wysiwyg/home_banner@x2.png"}}" /></div>
+					<div class="grid_5 omega">
+					<h2><strong>Feel</strong> The Quality</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+					<a href="#">read More</a></div>
+					<div class="clear">&nbsp;</div>
+					</div>
+					<div class="divider">&nbsp;</div>
+					{{widget type="meigeewidgets/newproducts" template="meigee/meigeewidgets/slider.phtml" block_position="1" static_block="slider_text_box" products_amount="10" widget_id="682"}}
+					<div class="divider">&nbsp;</div>
+					{{widget type="meigeewidgets/newproducts" template="meigee/meigeewidgets/slider.phtml" block_position="2" static_block="slider_text_box_2" products_amount="10" widget_id="6025"}}]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+        </pages>
+        <blocks>
+            <item>
+                <title>Meigee Cart Banner</title>
+                <identifier>cart_banner</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/cart_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/cart_banner@x2.jpg"}}" alt="" />]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Checkout Banner</title>
+                <identifier>checkout_banner</identifier>
+                <content><![CDATA[<a href="#"><img src="{{media url="wysiwyg/checkout_banner.png"}}" data-srcX2="{{media url="wysiwyg/checkout_banner@x2.png"}}" alt="" /></a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Custom Footer</title>
+                <identifier>custom_footer</identifier>
+                <content><![CDATA[<div class="grid_3 alpha">
+   <a href="{{store url=''}}" class="footer-logo"><img src="{{skin url='images/logo.png'}}" data-srcX2="{{skin url='images/@x2/logo@x2.png'}}" alt="" /></a>
+   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida ligula quis nunc sagittis nec sollicitudin arcu rutrum. Maecenas rutrum, lorem in tristique tristique, nibh enim volutpat sem, nec vestibulum nisl urna.</p>
+   <a href="#" class="more">read More</a>
+</div>
+<div class="grid_3">
+    <h3>Recent Tweets</h3>
+    <div class="custom-footer-block-content">
+        <ul class="tweets">
+            <li><span class="marker"></span>Check out this great #themeforest item 'Rivercast - responsive magento template' http://t.co/P04AGBXd <a href="#">2 months ago</a></li>
+            <li class="last"><span class="marker"></span>Check out new great #themeforest item 'Rivercast - responsive magento template'. Make your perfect store with us! http://t.co/P04AGBXd <a href="#">1 months ago</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="grid_3">
+    <h3>Contact info</h3>
+    <div class="custom-footer-block-content">
+        <ul>
+            <li class="address"><span class="marker"></span>Avenue of the American Independent,<br />st. 133/2 New York City, NY, United States</li>
+            <li class="tel"><span class="marker"></span>(000) 354-543-5456<br />(000) 354-543-5457</li>
+            <li class="mail last"><span class="marker"></span><a href="mailto:info@rivershop.com">info@rivershop.com</a><br /><a href="mailto:info@rivercast.com">info@rivercast.com</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="grid_3 omega">
+    <h3>Information</h3>
+    <div class="custom-footer-block-content">
+        <h4>FREE EXPRESS INTERNATIONAL DELIVERY EASY RETURNS</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida ligula quis nunc sagittis nec sollicitudin arcu rutrum. Maecenas rutrum, lorem in tristique tristique, nibh enim volutpat sem, nec vestibulum nisl urna.</p>
+    </div>
+</div>
+<div class="clear"></div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Custom Footer 2</title>
+                <identifier>custom_footer_2</identifier>
+                <content><![CDATA[<div class="grid_3 alpha">
+    <h3>Accessories</h3>
+    <div class="custom-footer-content">
+        <ul>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Dresses</a></li>
+            <li class="last"><a href="#">Coats</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="grid_3">
+    <h3>Staff</h3>
+    <div class="custom-footer-content">
+        <ul>
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">Our policy</a></li>
+            <li><a href="#">About our shipping</a></li>
+            <li class="last"><a href="#">User Options</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="grid_3">
+    <h3>Help</h3>
+    <div class="custom-footer-content">
+        <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">F.A.Q.</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li class="last"><a href="#">Plans</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Slide 1</title>
+                <identifier>header_slide_1</identifier>
+                <content><![CDATA[<img class="slider-product-bg" src="{{media url="wysiwyg/header_slider_small_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_bg@x2.jpg"}}" alt="" />
+<img class="slider-product-sky" src="{{media url="wysiwyg/header_slider_small_sky_bg.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_sky_bg@x2.png"}}" alt="" />
+<img class="slider-product-footer" src="{{media url="wysiwyg/header_slider_small_footer_bg.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_footer_bg@x2.png"}}" alt="" />
+<img class="slider-product-img" src="{{media url="wysiwyg/header_slider_product_img.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_product_img@x2.png"}}" alt="" />
+<div class="slider-product-label">Try It!</div>
+<h2><strong>Amazing</strong> Print Bag</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+<h3><a href="#">View Products</a></h3>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Slide 2</title>
+                <identifier>header_slide_2</identifier>
+                <content><![CDATA[<img class="slider-product-bg" src="{{media url="wysiwyg/header_slider_small_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_bg@x2.jpg"}}" alt="" />
+<img class="slider-product-sky" src="{{media url="wysiwyg/header_slider_small_sky_bg_2.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_sky_bg_2@x2.png"}}" alt="" />
+<img class="slider-product-footer" src="{{media url="wysiwyg/header_slider_small_footer_bg_2.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_footer_bg_2@x2.png"}}" alt="" />
+<img class="slider-product-img" src="{{media url="wysiwyg/header_slider_product_img_2.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_product_img_2@x2.png"}}" alt="" />
+<div class="slider-product-label">Check <br/> This!</div>
+<h2><strong>Extraordinary</strong> Accessories</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+<h3><a href="#">Go to category</a></h3>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Slide 3</title>
+                <identifier>header_slide_3</identifier>
+                <content><![CDATA[<img class="slider-product-bg" src="{{media url="wysiwyg/header_slider_small_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_bg@x2.jpg"}}" alt="" />
+<img class="slider-product-sky" src="{{media url="wysiwyg/header_slider_small_sky_bg_3.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_sky_bg_3@x2.png"}}" alt="" />
+<img class="slider-product-footer" src="{{media url="wysiwyg/header_slider_small_footer_bg_3.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_small_footer_bg_3@x2.png"}}" alt="" />
+<img class="slider-product-img" src="{{media url="wysiwyg/header_slider_product_img_3.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_product_img_3@x2.png"}}" alt="" />
+<div class="slider-product-label">Rain Rain<br/> go Away</div>
+<h2><strong>Essential</strong> Things</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+<h3><a href="#">Go to category</a></h3>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Text Box</title>
+                <identifier>header_text_box</identifier>
+                <content><![CDATA[<span>Online Support:</span> (000) 324-640-7835, (000) 324-640-5343]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Wide Slide 1</title>
+                <identifier>header_wide_slide_1</identifier>
+                <content><![CDATA[<img class="slider-product-bg" src="{{media url="wysiwyg/header_slider_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/header_slider_bg@x2.jpg"}}" alt="" />
+<img class="slider-product-sky" src="{{media url="wysiwyg/header_slider_sky_bg.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_sky_bg@x2.png"}}" alt="" />
+<img class="slider-product-footer" src="{{media url="wysiwyg/header_slider_footer_bg.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_footer_bg@x2.png"}}" alt="" />
+<img class="slider-product-img" src="{{media url="wysiwyg/header_slider_product_img.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_product_img@x2.png"}}" alt="" />
+<div class="slider-product-label">Try It!</div>
+<h2><strong>Amazing</strong> Print Bag</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+<h3><a href="#">View Products</a></h3>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Wide Slide 2</title>
+                <identifier>header_wide_slide_2</identifier>
+                <content><![CDATA[<img class="slider-product-bg" src="{{media url="wysiwyg/header_slider_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/header_slider_bg@x2.jpg"}}" alt="" />
+<img class="slider-product-sky" src="{{media url="wysiwyg/header_slider_sky_bg_2.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_sky_bg_2@x2.png"}}" alt="" />
+<img class="slider-product-footer" src="{{media url="wysiwyg/header_slider_footer_bg_2.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_footer_bg_2@x2.png"}}" alt="" />
+<img class="slider-product-img" src="{{media url="wysiwyg/header_slider_product_img_2.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_product_img_2@x2.png"}}" alt="" />
+<div class="slider-product-label">Check <br/> This!</div>
+<h2><strong>Extraordinary</strong> Accessories</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+<h3><a href="#">Go to category</a></h3>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Header Wide Slide 3</title>
+                <identifier>header_wide_slide_3</identifier>
+                <content><![CDATA[<img class="slider-product-bg" src="{{media url="wysiwyg/header_slider_bg.jpg"}}" data-srcX2="{{media url="wysiwyg/header_slider_bg@x2.jpg"}}" alt="" />
+<img class="slider-product-sky" src="{{media url="wysiwyg/header_slider_sky_bg_3.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_sky_bg_3@x2.png"}}" alt="" />
+<img class="slider-product-footer" src="{{media url="wysiwyg/header_slider_footer_bg_3.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_footer_bg_3@x2.png"}}" alt="" />
+<img class="slider-product-img" src="{{media url="wysiwyg/header_slider_product_img_3.png"}}" data-srcX2="{{media url="wysiwyg/header_slider_product_img_3@x2.png"}}" alt="" />
+<div class="slider-product-label">Rain Rain<br/> go Away</div>
+<h2><strong>Essential</strong> Things</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum. Pellentesque tincidunt neque non arcu scelerisque</p>
+<h3><a href="#">Go to category</a></h3>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Product Custom</title>
+                <identifier>product_custom</identifier>
+                <content><![CDATA[<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="meigeeteam">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Product Custom 2</title>
+                <identifier>product_custom_2</identifier>
+                <content><![CDATA[<img src="{{media url="wysiwyg/product_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/product_banner@x2.jpg"}}" alt="" />]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Sidebar Banner</title>
+                <identifier>sidebar_banner</identifier>
+                <content><![CDATA[<a href="#"><img src="{{media url="wysiwyg/sidebar_banner.png"}}" data-srcX2="{{media url="wysiwyg/sidebar_banner@x2.png"}}" alt="" /></a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Slider Banners</title>
+                <identifier>slider_banners</identifier>
+                <content><![CDATA[<a href="#"><img src="{{media url="wysiwyg/header_banner.jpg"}}" data-srcX2="{{media url="wysiwyg/header_banner@x2.jpg"}}" alt="" /></a>
+<a href="#"><img src="{{media url="wysiwyg/header_banner_2.jpg"}}" data-srcX2="{{media url="wysiwyg/header_banner_2@x2.jpg"}}" alt="" /></a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Slider Text Box</title>
+                <identifier>slider_text_box</identifier>
+                <content><![CDATA[<h2><strong>New</strong> Collection</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum.</p>
+<a href="#">Check This Collection</a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Slider Text Box 2</title>
+                <identifier>slider_text_box_2</identifier>
+                <content><![CDATA[<h2><strong>On sale</strong> products</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi eget nunc laoreet posuere. Suspendisse adipiscing placerat augue, dictum blandit justo laoreet a. Pellentesque quam vitae urna fermentum elementum.</p>
+<a href="#">View All</a>]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Meigee Social Links</title>
+                <identifier>social_links</identifier>
+                <content><![CDATA[{{widget type="meigeewidgets/sociallinks" twitter="http://twitter.com" rss="http://rss.com" facebook="http://facebook.com" googleplus="https://plus.google.com" linkedin="http://linkedin.com" template="meigee/meigeewidgets/sociallinks.phtml"}}]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+        </blocks>
+    </cms>
+</root>
